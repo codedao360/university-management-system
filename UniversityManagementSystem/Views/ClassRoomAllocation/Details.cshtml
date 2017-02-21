@@ -1,0 +1,66 @@
+﻿@model UniversityManagementMVCandEF.Models.ClassRoomAllocation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClassRoomAllocation</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassRoom.RoomNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassRoom.RoomNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Day.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Day.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeTo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClassRoomAllocationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

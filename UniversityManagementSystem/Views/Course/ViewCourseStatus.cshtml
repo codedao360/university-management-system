@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "ViewCourseStatus";
+}
+<br />
+<h4>View all Courses Status</h4>
+
+<div >
+    <br />
+  
+    @using (Html.BeginForm())
+    {
+        <div class="control-group">
+            <div class="control-label">
+                @Html.Label("Department")
+            </div>
+            <div class="controls">
+                @Html.DropDownList("departmentId", String.Empty)
+            </div>
+        </div>
+    }
+</div>
+<div class="controls" id="section-data">
+    @Html.Partial("_CourseInformation")
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        function FillData(id) {
+            $("#section-data").load("FilteredDepartment", { departmentId: id });
+        }
+
+        $(function () {
+            $("#departmentId").change(function () {
+                var id = $("#departmentId").val();
+                FillData(id);
+                //alert('test');
+            });
+        });
+
+    </script>
+}
+

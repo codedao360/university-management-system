@@ -1,0 +1,69 @@
+﻿@model IEnumerable<UniversityManagementMVCandEF.Models.ClassRoomAllocation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Room Allocation Index Page</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassRoom.RoomNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeTo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassRoom.RoomNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeTo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ClassRoomAllocationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ClassRoomAllocationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ClassRoomAllocationId })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+<li class="previous">
+    @Html.ActionLink("Allocate new Clssroom", "Create")
+</li>
+<li class="previous">
+    @Html.ActionLink("View Class Room Allocation Information", "ViewClassSchedualInformation")
+</li>

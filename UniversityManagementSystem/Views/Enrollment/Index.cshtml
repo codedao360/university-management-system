@@ -1,0 +1,55 @@
+﻿@model IEnumerable<UniversityManagementMVCandEF.Models.Enrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Enrollment Index Page</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.RegNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.RegNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollmentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EnrollmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollmentId })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+<li class="previous">
+    @Html.ActionLink("Enroll a Student in a Course", "Create")
+</li>
+<li class="previous">
+    @Html.ActionLink("Entry the result of a rolled Course", "StudentResultEntry")
+</li>
+
+<li class="previous">
+    @Html.ActionLink("View all enrolled Result", "ViewResult")
+</li>
