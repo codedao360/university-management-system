@@ -9,7 +9,7 @@ namespace UniversityManagementSystem.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "UniversityManagementSystem.Models.AustDBContext";
         }
 

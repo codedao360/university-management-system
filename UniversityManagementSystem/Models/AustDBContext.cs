@@ -8,10 +8,11 @@ namespace UniversityManagementSystem.Models
 {
 
     public class AustDBContext : DbContext
-    {
-        public AustDBContext()
-            : base("name=AustDBContext")
+    {  
+        
+        public AustDBContext(): base("name=AustDBContext")
         {
+            Database.SetInitializer(new FixedData());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
